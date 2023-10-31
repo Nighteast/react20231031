@@ -21,6 +21,7 @@ function MyComp() {
         color: "white",
         padding: "10px",
         width: "25%",
+        textAlign: "center",
       }}
     >
       {name}
