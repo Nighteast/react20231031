@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/react";
-import {ArrowRightIcon, EmailIcon} from "@chakra-ui/icons";
+import { ArrowRightIcon, EmailIcon } from "@chakra-ui/icons";
 
 function App() {
   return (
@@ -18,10 +18,12 @@ function App() {
         Doloribus.
       </Button>
       <Button variant={"link"}>Voluptatibus!</Button>
-      <Button leftIcon={<EmailIcon/>}>Eum.</Button>
+      <Button leftIcon={<EmailIcon />}>Eum.</Button>
       <Button rightIcon={<ArrowRightIcon />}>Quod.</Button>
       <Button isLoading>Dicta.</Button>
-      <Button isLoading loadingText={"전송중"}>Iste.</Button>
+      <Button isLoading loadingText={"전송중"}>
+        Iste.
+      </Button>
       <Button>Aperiam?</Button>
       <Button>Dolore!</Button>
       <Button>Neque!</Button>
