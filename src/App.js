@@ -21,46 +21,46 @@ function App() {
     <>
       <SimpleGrid columns={1} gap={5}>
         <Box>
-          {/*Table>Thead>Tr>Th*4>lorem1^^^Tbody>Tr*5>Td*4>lorem1*/}
-          <Table>
+          {/*Box>Table[variant=striped]>Thead>Tr>Th*4>lorem1^^^Tbody>Tr*5>Td*4>lorem1*/}
+          <Table variant="striped" colorScheme="red">
             <Thead>
               <Tr>
                 <Th>Lorem.</Th>
-                <Th>Impedit!</Th>
-                <Th>Possimus.</Th>
-                <Th>Fuga.</Th>
+                <Th>Similique!</Th>
+                <Th>Ipsa!</Th>
+                <Th>Eligendi.</Th>
               </Tr>
             </Thead>
             <Tbody>
               <Tr>
                 <Td>Lorem.</Td>
-                <Td>Pariatur?</Td>
-                <Td>Sunt!</Td>
-                <Td>Corporis!</Td>
+                <Td>Velit!</Td>
+                <Td>Consequatur.</Td>
+                <Td>Autem.</Td>
               </Tr>
               <Tr>
                 <Td>Lorem.</Td>
-                <Td>Inventore.</Td>
-                <Td>Officiis.</Td>
-                <Td>Provident.</Td>
+                <Td>Minus!</Td>
+                <Td>Aliquid.</Td>
+                <Td>Aliquid.</Td>
               </Tr>
               <Tr>
                 <Td>Lorem.</Td>
-                <Td>Laborum?</Td>
-                <Td>Cumque!</Td>
-                <Td>Maxime?</Td>
+                <Td>Id?</Td>
+                <Td>Distinctio.</Td>
+                <Td>Fugit.</Td>
               </Tr>
               <Tr>
                 <Td>Lorem.</Td>
-                <Td>Soluta?</Td>
-                <Td>Quasi?</Td>
-                <Td>Ea?</Td>
+                <Td>Placeat?</Td>
+                <Td>Nisi.</Td>
+                <Td>Sapiente.</Td>
               </Tr>
               <Tr>
                 <Td>Lorem.</Td>
-                <Td>Nisi!</Td>
-                <Td>Harum!</Td>
-                <Td>Incidunt?</Td>
+                <Td>Libero!</Td>
+                <Td>Iure.</Td>
+                <Td>Suscipit.</Td>
               </Tr>
             </Tbody>
           </Table>
