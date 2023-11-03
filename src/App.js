@@ -7,6 +7,7 @@ function App(props) {
   const isOdd = number % 2 == 1;
 
   function handleInputChange(e) {
+    // console.log(typeof e.target.value);
     setNumber(Number(e.target.value));
   }
 
