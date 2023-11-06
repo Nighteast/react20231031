@@ -10,6 +10,7 @@ function App(props) {
     { id: 1, name: "에스프레소" },
     { id: 2, name: "카푸치노" },
   ];
+  // ...
 
   const listItems = arr.map((item, index) => (
     <ListItem key={index}>
