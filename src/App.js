@@ -11,7 +11,12 @@ function App() {
   }
 
   function handleRemoveButtonClick(index) {
-    setItems(items.filter((item, i) => i != index));
+    // setItems(items.filter((item, i) => i != index));
+
+    const nextItems = [...items];
+    nextItems.splice(index, 1);
+    setItems(nextItems);
+
     console.log(items);
   }
 
