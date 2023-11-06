@@ -27,6 +27,10 @@ function App(props) {
         </span>
         의 email은
         <span style={{ color: "aqua", backgroundColor: "black" }}>{email}</span>
+        입니다. 주소는
+        <span style={{ color: "aqua", backgroundColor: "black" }}>
+          {address}
+        </span>
         입니다.
       </Text>
 
@@ -35,7 +39,7 @@ function App(props) {
           type="text"
           value={address}
           onChange={(e) => {
-            handleAddressChange(e.target.value);
+            setAddress(e.target.value);
           }}
         />
       </Box>
