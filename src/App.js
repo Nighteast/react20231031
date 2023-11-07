@@ -1,24 +1,6 @@
-import React, { createContext, useContext, useState } from "react";
-import { Input, Text } from "@chakra-ui/react";
-
-function MyInput() {
-  const { text, setText } = useContext(TextContext);
-
-  return (
-    <Input
-      value={text}
-      onChange={(e) => {
-        setText(e.target.value);
-      }}
-    />
-  );
-}
-
-function MyText() {
-  const { text } = useContext(TextContext);
-
-  return <Text>{text}</Text>;
-}
+import React, { createContext, useState } from "react";
+import { MyInput } from "./component/MyInput";
+import { MyText } from "./component/MyText";
 
 function App(props) {
   const [text, setText] = useState("초기값");
@@ -32,5 +14,5 @@ function App(props) {
   );
 }
 
-const TextContext = createContext(null);
+export const TextContext = createContext(null);
 export default App;
