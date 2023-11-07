@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Box, Button, Text } from "@chakra-ui/react";
 
-function MyComp1() {
+function MyComp1({ onClick }) {
   return (
     <Box>
-      <Button>텍스트 바꾸기!</Button>
+      <Button onClick={onClick}>텍스트 바꾸기!</Button>
     </Box>
   );
 }
@@ -19,10 +19,12 @@ function MyComp2({ message }) {
 
 function App(props) {
   const [message, setMessage] = useState("hello");
-
+  function handleButtonClick(e) {
+    setMessage("안녕하세요.");
+  }
   return (
     <div>
-      <MyComp1></MyComp1>
+      <MyComp1 onClick={handleButtonClick}></MyComp1>
       {/* MyComp1 에 있는 버튼이 클릭되면 */}
       <MyComp2 message={message}></MyComp2>
       {/* MyComp2 에 있는 text가 바뀌게 */}
