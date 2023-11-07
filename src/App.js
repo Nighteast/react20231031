@@ -20,13 +20,12 @@ function MyText({ address }) {
 function App(props) {
   const [address, setAddress] = useState("");
 
-  function handleInputChange(text) {
-    setAddress(text.target.value);
-  }
-
   return (
     <div>
-      <MyInput address={address} onInputChange={handleInputChange} />
+      <MyInput
+        address={address}
+        onInputChange={(text) => setAddress(text.target.value)}
+      />
       <MyText address={address} />
     </div>
   );
