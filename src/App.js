@@ -1,21 +1,36 @@
-import React, { createContext, useState } from "react";
-import { AComp } from "./AComp";
-import { BComp } from "./BComp";
+import React, { useState } from "react";
+import { Box, Button } from "@chakra-ui/react";
 
-function App(props) {
-  const [message, setMessage] = useState("초기값");
+let out = 0;
 
+function MyComp() {
+  const [num, setNum] = useState(0);
+  let a = 3;
+
+  out++;
+
+  console.log("a", a);
+  console.log("num", num);
+  console.log("out", out);
   return (
     <div>
-      {/* 2. context에 state 넣기 : <Context.Provider value={state}></Context.Provider> */}
-      <MessageContext.Provider value={{ message, setMessage }}>
-        <AComp />
-        <BComp />
-      </MessageContext.Provider>
+      <Button
+        onClick={() => {
+          setNum(num + 1);
+        }}
+      >
+        <p>{num}</p>
+      </Button>
     </div>
   );
 }
 
-// 1. context 만들기 : createContext(null)
-export const MessageContext = createContext(null);
+function App(props) {
+  return (
+    <div>
+      <MyComp />
+    </div>
+  );
+}
+
 export default App;
