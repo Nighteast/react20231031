@@ -1,32 +1,39 @@
 import React, { useState } from "react";
 import { Box, Input, Text } from "@chakra-ui/react";
 
-function MyInput({ address, onInputChange }) {
+function MyInput({ value, onInputChange }) {
   return (
     <Box>
-      <Input value={address} onChange={onInputChange} />
+      <Input value={value} onChange={onInputChange} />
     </Box>
   );
 }
 
-function MyText({ address }) {
+function MyText({ value }) {
   return (
     <Box>
-      <Text>{address}</Text>
+      <Text>{value}</Text>
     </Box>
   );
 }
 
 function App(props) {
   const [address, setAddress] = useState("");
+  const [email, setEmail] = useState("");
 
   return (
     <div>
       <MyInput
-        address={address}
+        value={address}
         onInputChange={(text) => setAddress(text.target.value)}
       />
-      <MyText address={address} />
+      <MyText value={address} />
+      <hr />
+      <MyInput
+        value={email}
+        onInputChange={(text) => setEmail(text.target.value)}
+      />
+      <MyText value={email} />
     </div>
   );
 }
