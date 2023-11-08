@@ -3,9 +3,16 @@ import { Box, Select, Spinner, Text } from "@chakra-ui/react";
 import axios from "axios";
 
 function App(props) {
+  const [employeeIdList, setEmployeeIdList] = useState([]);
   const [employeeId, setEmployeeId] = useState(1);
   const [employee, setEmployee] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("/api/main1/sub7")
+      .then((response) => setEmployeeIdList(response.data));
+  }, []);
 
   useEffect(() => {
     setIsLoading(true);
@@ -43,16 +50,9 @@ function App(props) {
         placeholder="직원번호를 선택하세요"
         onChange={(e) => setEmployeeId(e.target.value)}
       >
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
+        {employeeIdList.map((id) => (
+          <option value={id}>{id}</option>
+        ))}
       </Select>
       <Box>{textContent}</Box>
     </div>
