@@ -2,29 +2,53 @@ import React from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Link,
+  Outlet,
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
+
+function HomeComp() {
+  return (
+    <Box>
+      <Flex gap={"10px"}>
+        {/* react-router 사용시 a 태그를 사용하지 않을 것 */}
+        <Box>
+          <a href="/apath">에이로 가기</a>
+        </Box>
+        <Box>
+          <a href="/bpath">비로 가기</a>
+        </Box>
+      </Flex>
+      <Flex gap={"10px"}>
+        {/* 대신 Link Component 사용 */}
+        <Box>
+          <Link to={"/apath"}>에이로 가기!</Link>
+        </Box>
+        <Box>
+          <Link to={"/bpath"}>비로 가기!</Link>
+        </Box>
+      </Flex>
+      <Outlet />
+    </Box>
+  );
+}
+
+function AComp() {
+  return <Box>에이 컴포넌트</Box>;
+}
+
+function BComp() {
+  return <Box>비 컴포넌트</Box>;
+}
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
-    <>
-      <Route path="/" element={<Box>home page</Box>} />
-      <Route path="/path1" element={<Box>경로1</Box>} />
-      <Route path="/path2" element={<Box>경로2</Box>} />
-      <Route path="/path3" element={<Box>경로3</Box>} />
-      <Route path="/main1/path1" element={<Box>경로4</Box>} />
-      <Route path="/main1/path2" element={<Box>경로5</Box>} />
-      <Route path="/main2">
-        <Route path="path1" element={<Box>경로6</Box>} />
-        <Route path="path2" element={<Box>경로7</Box>} />
-        <Route path="path3">
-          <Route path="sub1" element={<Box>경로8</Box>} />
-          <Route path="sub2" element={<Box>경로9</Box>} />
-        </Route>
-      </Route>
-    </>,
+    <Route path="/" element={<HomeComp />}>
+      <Route path="apath" element={<AComp />} />
+      <Route path="bpath" element={<BComp />} />
+    </Route>,
   ),
 );
 
